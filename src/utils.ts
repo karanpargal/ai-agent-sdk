@@ -7,3 +7,15 @@ export const memoizeWeakMap = <V extends object, R>(fn: (v: V) => R) => {
         return r;
     };
 };
+
+export function generateIdSync(length: number, charset: string): string {
+    let result = "";
+    const charsetLength = charset.length;
+  
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * charsetLength);
+      result += charset[randomIndex];
+    }
+  
+    return result;
+  }
